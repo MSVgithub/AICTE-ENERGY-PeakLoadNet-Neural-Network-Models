@@ -1,1 +1,4 @@
 # AICTE-ENERGY-
+Project Title:
+PeakLoadNet: Neural Network Models for Real-Time Electricity Peak Load PredictionProblem Statement:
+Electricity providers must accurately predict peak load demand to ensure reliable power supply, avoid outages, and optimize energy generation costs. Traditional forecasting methods can be inefficient and lack precision due to the complex and dynamic nature of electricity consumption patterns influenced by factors like time, weather, and human activity. This project aims to develop a machine learning-based model, specifically an LSTM neural network, to predict the peak electricity load in real time using historical load data. Accurate peak load forecasting supports grid stability, enhances energy efficiency, and informs decision-making for smart grid operations.
