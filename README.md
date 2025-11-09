@@ -38,9 +38,4 @@ PeakLoadNet predicts the national electricity peak load using regional hourly de
 | Neural Network (MLPRegressor) | 99.90% |
 | Random Forest Regressor | 99.90% |
 
----
 
-## 💻 Usage
-1. Clone the repository:  
-   ```bash
-   git clone https://github.com/yourusername/PeakLoadNet.git
