@@ -5,17 +5,10 @@ It includes complete data preprocessing, model training, evaluation, and deploym
 
 ---
 
+
 ## 🚀 Project Overview
 
-The objective of this project is to analyze historical energy demand data and build a machine learning model that can predict future energy demand based on features such as:
-
-- Temperature  
-- Humidity  
-- Wind Speed  
-- Solar Radiation  
-- Historical Energy Demand  
-
-The final trained model is deployed as a **REST API**, allowing external applications to send input features and receive predicted demand values.
+This project builds predictive models for electricity demand using two datasets: an hourly dataset (detailed regional hourly demands with timestamps) and a monthly aggregated dataset. The workflow includes data cleaning, datetime handling, feature engineering from regional demand columns, and careful prevention of data leakage during train/test splitting. Multiple models were trained and evaluated (Linear Regression and Random Forest / ExtraTrees experiments). Because of deployment size limits, the lightweight Linear Regression model was exported and deployed as a REST API for real-time inference, while tree-based models were retained locally or compressed for experimentation.
 
 ---
 
