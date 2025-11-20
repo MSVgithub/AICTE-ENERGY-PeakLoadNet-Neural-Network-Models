@@ -4,7 +4,7 @@ import numpy as np
 
 app = Flask(__name__)
 
-# Load model
+# Load Linear Regression model
 lr = joblib.load("linear_model.joblib")
 
 @app.route("/")
@@ -13,10 +13,20 @@ def home():
 
 @app.route("/predict", methods=["POST"])
 def predict():
-    data = request.json["features"]      # input list
-    X = np.array([data])                 # 2D array shape (1, n)
-    pred = lr.predict(X)[0]
-    return jsonify({"prediction": float(pred)})
+    try:
+        data = request.json.get("features")
+
+        if data is None:
+            return jsonify({"error": "No 'features' field provided"}), 400
+
+        # Convert to numpy array and reshape properly
+        X = np.array(data, dtype=float).reshape(1, -1)
+
+        pred = lr.predict(X)[0]
+        return jsonify({"prediction": float(pred)})
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
